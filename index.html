@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Devfinder - GitHub User Search</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <main class="app">
+        <div class="content">
+
+            <!-- HEADER -->
+            <header class="header">
+
+                <h1 class="logo">devfinder</h1>
+
+                <button class="theme" id="themeButton" type="button">
+                    <span id="themeText">DARK</span>
+
+                    <svg id="themeIcon" viewBox="0 0 24 24">
+                        <path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"/>
+                    </svg>
+                </button>
+
+            </header>
+
+
+            <!-- SEARCH -->
+            <section class="search-box">
+
+                <svg class="search-icon" viewBox="0 0 24 24">
+                    <circle cx="10.8" cy="10.8" r="7.3"/>
+                    <path d="m16.2 16.2 5 5"/>
+                </svg>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search GitHub username..."
+                    autocomplete="off"
+                >
+
+                <button id="searchButton" type="button">
+                    Search
+                </button>
+
+            </section>
+
+            <p id="errorMessage"></p>
+
+
+            <!-- PROFILE CARD -->
+            <section class="profile-card">
+
+                <!-- AVATAR -->
+                <div class="profile-avatar">
+                    <img
+                        id="avatar"
+                        src="https://github.com/octocat.png"
+                        alt="GitHub Avatar"
+                    >
+                </div>
+
+
+                <!-- PROFILE CONTENT -->
+                <div class="profile-content">
+
+                    <!-- USER INFO -->
+                    <div class="profile-header">
+
+                        <div>
+                            <h2 id="userName">The Octocat</h2>
+
+                            <a
+                                id="userLogin"
+                                href="https://github.com/octocat"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                @octocat
+                            </a>
+                        </div>
+
+                        <p class="joined" id="joined">
+                            Joined 25 Jan 2011
+                        </p>
+
+                    </div>
+
+
+                    <!-- BIO -->
+                    <p class="bio" id="bio">
+                        This profile has no bio
+                    </p>
+
+
+                    <!-- STATISTICS -->
+                    <div class="stats">
+
+                        <div class="stat-item">
+                            <span>Repos</span>
+                            <h3 id="repos">8</h3>
+                        </div>
+
+                        <div class="stat-item">
+                            <span>Followers</span>
+                            <h3 id="followers">3938</h3>
+                        </div>
+
+                        <div class="stat-item">
+                            <span>Following</span>
+                            <h3 id="following">9</h3>
+                        </div>
+
+                    </div>
+
+
+                    <!-- PROFILE LINKS -->
+                    <div class="profile-links">
+
+                        <div class="link-item">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2a8 8 0 0 0-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/>
+                            </svg>
+
+                            <span id="location">San Francisco</span>
+                        </div>
+
+
+                        <div class="link-item">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M22 5.8a8.2 8.2 0 0 1-2.4.7 4.2 4.2 0 0 0 1.8-2.3 8.3 8.3 0 0 1-2.7 1 4.2 4.2 0 0 0-7.2 3.8 11.9 11.9 0 0 1-8.6-4.4 4.2 4.2 0 0 0 1.3 5.6 4.1 4.1 0 0 1-1.9-.5v.1a4.2 4.2 0 0 0 3.4 4.1 4.2 4.2 0 0 1-1.9.1 4.2 4.2 0 0 0 3.9 2.9A8.4 8.4 0 0 1 2.5 18a11.8 11.8 0 0 0 18.2-10 8.4 8.4 0 0 0 1.3-2.2Z"/>
+                            </svg>
+
+                            <span id="twitter">Not Available</span>
+                        </div>
+
+
+                        <div class="link-item">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M10.6 13.4a1 1 0 0 1 0-1.4l3.5-3.5a3 3 0 0 1 4.2 4.2l-2.1 2.1a3 3 0 0 1-4.2 0 1 1 0 0 1 1.4-1.4 1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0-1.4-1.4L12 13.4a1 1 0 0 1-1.4 0Z"/>
+                                <path d="M13.4 10.6a1 1 0 0 1 0 1.4l-3.5 3.5a3 3 0 0 1-4.2-4.2l2.1-2.1a3 3 0 0 1 4.2 0 1 1 0 0 1-1.4 1.4 1 1 0 0 0-1.4 0l-2.1 2.1a1 1 0 0 0 1.4 1.4l3.5-3.5a1 1 0 0 1 1.4 0Z"/>
+                            </svg>
+
+                            <a id="blog" href="https://github.blog" target="_blank" rel="noopener noreferrer">
+                                https://github.blog
+                            </a>
+                        </div>
+
+
+                        <div class="link-item">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M3 3h18v18H3V3Zm3 3v2h2V6H6Zm0 4v2h2v-2H6Zm0 4v2h2v-2H6Zm0 4v2h2v-2H6Zm4-12v2h2V6h-2Zm0 4v2h2v-2h-2Zm0 4v2h2v-2h-2Zm0 4v2h2v-2h-2Zm4-12v2h2V6h-2Zm0 4v2h2v-2h-2Zm0 4v2h2v-2h-2Zm0 4v2h2v-2h-2Zm4-12v2h1V6h-1Zm0 4v2h1v-2h-1Zm0 4v2h1v-2h-1Zm0 4v2h1v-2h-1Z"/>
+                            </svg>
+
+                            <span id="company">agithub</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+
+    <script src="./app.js"></script>
+
+</body>
+</html>
